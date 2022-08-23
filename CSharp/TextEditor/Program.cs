@@ -1,11 +1,9 @@
-﻿internal class Program
-{
-    private static void Main(string[] args)
-    {
-        Menu();
-    }
+﻿// See https://aka.ms/new-console-template for more information
+Console.WriteLine("Hello, World!");
 
-    static void Menu()
+Menu();
+
+ static void Menu()
     {
         Console.Clear();
         Console.WriteLine("What do you want to do?");
@@ -19,7 +17,6 @@
             case 0: System.Environment.Exit(0); break;
             case 1: Open(); break;
             case 2: Edit(); break;
-
         }
     }
 
@@ -35,11 +32,9 @@
         do 
         {
             text += Console.ReadLine();
-            text += Environment.NewLine;
+            text += Environment.NewLine; // quebrar a linha no fim de cada leitura
         }
-        while(Console.ReadKey().Key != ConsoleKey.Escape);
+        while(Console.ReadKey().Key != ConsoleKey.Escape); // ConsoleKey.Escape = tecla ESC
 
         Console.Write(text);
     }
-
-}
